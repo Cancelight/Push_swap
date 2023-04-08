@@ -1,27 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   appended.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/07 16:52:12 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/04/07 17:41:22 by bkiziler         ###   ########.fr       */
+/*   Created: 2023/04/07 17:10:41 by bkiziler          #+#    #+#             */
+/*   Updated: 2023/04/08 16:22:50 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push.h"
 
-int	main(int ac, char **av)
+int	size_apart(int ac, char **av, t_list *stack_a)
 {
-	p_list *stack_a;
-	p_list *stack_b;
+	int	i;
+	int k;
+	char **temp;
+	int *count;
 
-	if (ac)
-		parse(ac, av, stack_a, stack_b);
+	i = 1;
+	while(i < ac)
+	{
+		k = 0;
+		*count = 0;
+		temp = push_split(av[i++], 32, count);
+		while(k < *count)
+		{
+			ft_lstadd_back(&stack_a, push_lstnew(ft_atoi(temp[k])));
+			free(temp[k++]);
+		}
+		free(temp);
+		i++;
+	}
+	return(ft_lstsize(stack_a));
 }
 
-void parse(int ac, char **av, p_list *stack_a, p_list *stack_b)
+int	op_count()
 {
-	apart(ac, av, stack_a);
+	static count;
+
+	count++;
+	return (count);
 }

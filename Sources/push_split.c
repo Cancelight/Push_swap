@@ -6,7 +6,7 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 17:58:39 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/04/07 18:59:57 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/04/08 15:33:00 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,44 @@ char	**push_split(char const *s, char c, int *count)
 		ptr[a++] = ft_substr(s, n, i - n);
 	}
 	return (ptr);
+}
+
+int	push_atoi(const char *s)
+{
+	int		i;
+	long	back;
+	int		np;
+
+	back = 0;
+	np = 1;
+	i = 0;
+	while ((s[i] <= 13 && s[i] >= 9) || s[i] == 32 && push_alnum(s))
+		i++;
+	if (s[i] == 43 || s[i] == 45)
+	{
+		if (s[i] == 45)
+			np *= -1;
+		i++;
+	}
+	while (s[i] >= 48 && s[i] <= 57)
+	{
+		back = back * 10 + (s[i] - 48) * np;
+		if (back > 2147483647)
+			exit_game("The number exceeds the integer limit.");
+		if (back < -2147483648)
+			exit_game("The number exceeds the integer limit.");
+		i++;
+	}
+	return ((int)back);
+}
+
+int	push_alnum(char *str)
+{
+	while (*str)
+	{
+		if (ft_isalnum(*str) != 1 && *str != 32)
+			exit_game("Invalid string");
+		str++;
+	}
+	return (1);
 }

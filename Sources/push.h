@@ -6,7 +6,7 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 15:35:38 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/04/07 19:02:06 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/04/08 17:18:18 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,20 @@ typedef struct s_list{
 }			p_list;
 
 char	**push_split(char const *s, char c, int *count);
-char	**apart(int ac, char **av, t_list *stack_a);
+int		size_apart(int ac, char **av, t_list *stack_a);
+int		push_alnum(char *str);
+void	exit_game(char *str);
+int		push_atoi(const char *s);
+p_list	*push_lstnew(void *content);
+int		op_count(void);
+int		swap_op(p_list *stack_c);
+int		rerotate_op(p_list *stack_c);
+void	ss_op(p_list *stack_c, p_list *stack_d);
+void	push_op(p_list *stack_c);
+void	rrr_op(p_list *stack_c, p_list *stack_d);
+void	rr_op(p_list *stack_c, p_list *stack_d);
+int		rotate_op(p_list *stack_c);
+
 
 
 //bir sort ile sırala indexlerini al  ve index üzerinden işlem yap i

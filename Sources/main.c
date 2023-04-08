@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   appended.c                                         :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/07 17:10:41 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/04/07 17:59:11 by bkiziler         ###   ########.fr       */
+/*   Created: 2023/04/07 16:52:12 by bkiziler          #+#    #+#             */
+/*   Updated: 2023/04/08 17:34:36 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push.h"
 
-char	**apart(int ac, char **av, t_list *stack_a)
+int	main(int ac, char **av)
 {
-	int	i;
-	int k;
-	char **temp;
-	int *count;
+	p_list *stack_a;
+	p_list *stack_b;
 
-	i = 1;
-	while(i < ac)
-	{
-		k = 0;
-		*count = 0;
-		temp = push_split(av[i++], 32, count);
-		while(k < *count)
-		{
-			ft_lstadd_back(&stack_a, ft_lstnew(ft_atoi(temp[k])));
-			free(temp[k++]);
-		}
-		free(temp);
-		i++;
-	}
+	if (ac)
+		parse(ac, av, stack_a, stack_b);
+}
+
+void	parse(int ac, char **av, p_list *stack_a, p_list *stack_b)
+{
+	apart(ac, av, stack_a);
+	insert_index(stack_a);
+
 }
