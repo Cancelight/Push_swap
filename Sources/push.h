@@ -6,7 +6,7 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 15:35:38 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/04/08 17:18:18 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/04/13 14:22:39 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,17 @@ typedef struct s_list{
 }			p_list;
 
 char	**push_split(char const *s, char c, int *count);
-int		size_apart(int ac, char **av, t_list *stack_a);
+void	size_apart(int ac, char **av, t_list *stack_a);
 int		push_alnum(char *str);
 void	exit_game(char *str);
 int		push_atoi(const char *s);
 p_list	*push_lstnew(void *content);
-int		op_count(void);
-int		swap_op(p_list *stack_c);
-int		rerotate_op(p_list *stack_c);
-void	ss_op(p_list *stack_c, p_list *stack_d);
-void	push_op(p_list *stack_c);
-void	rrr_op(p_list *stack_c, p_list *stack_d);
-void	rr_op(p_list *stack_c, p_list *stack_d);
-int		rotate_op(p_list *stack_c);
+void	swap_op(p_list *stack_c, char *str);
+void	rerotate_op(p_list *stack_c, char *str);
+void	push_op(p_list *stack_c, p_list *stack_d, char *str);
+void	rotate_op(p_list *stack_c, char *str);
+void	insert_index(p_list *stack_a);
+void	arrange_stack(p_list *stack_a, p_list *stack_b, int bit);
 
 
 
