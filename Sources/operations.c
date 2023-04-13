@@ -22,7 +22,7 @@ void	push_op(t_blist **stack_c, t_blist **stack_d, char *str)
 	if (temp->next == NULL)
 	{
 		push_lstadd_back(stack_d, push_lstlast(*stack_c));
-		temp = NULL;
+		*stack_c = NULL;
 		return ;
 	}
 	while(temp->next->next != NULL)
@@ -50,16 +50,13 @@ void	rotate_op(t_blist **stack_c)
 void	rerotate_op(t_blist **stack_c)
 {
 	t_blist *temp;
-	t_blist *stemp;
 
 	if (push_lstsize(*stack_c) <= 2)
 		return ;
 	temp = *stack_c;
-	while (temp->next->next != NULL)
-		temp = temp->next;
-	stemp = temp->next;
+	*stack_c = (*stack_c)->next;
 	temp->next = NULL;
-	push_lstadd_front(stack_c, stemp);
+	push_lstadd_back(stack_c, temp);
 }
 
 void	write_op(char *str)
