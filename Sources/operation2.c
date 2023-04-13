@@ -6,7 +6,7 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 17:16:29 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/04/13 19:06:18 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/04/13 19:54:17 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,25 +64,28 @@ int	max_bit(int a)
 void	arrange_stack(t_blist **stack_a, t_blist **stack_b, int bit)
 {
 	int		k;
+	int		i;
 	t_blist	*temp;
-
+//ŞU KODU DÜZELT stack ve liste ters işliyor unutma
 	k = -1;
 	while (++k <= bit)
 	{
+		i = -1;
 		temp = *stack_a;
-		while (temp != NULL)
+		while (temp->index != i || temp != NULL)
 		{
 			if (temp->index >> k & 1)
 			{
-				temp = temp->next;
+				if (i != -1)
+					i = temp->index;
 				rotate_op(stack_a);
 				write_op("ra");
 			}
 			else
-			{
-				temp = temp->next;
 				push_op(stack_a, stack_b, "pb");
-			}
+			temp = *stack_a;
+			ft_printf("r");
+			ft_printf("index:%d\n", temp->index);
 		}
 		while (*stack_b != NULL)
 			push_op(stack_b, stack_a, "pa");
