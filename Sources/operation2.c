@@ -15,12 +15,17 @@
 void	swap_op(t_blist **stack_c)
 {
 	t_blist	*temp;
+	t_blist *stemp;
 
 	if (push_lstsize(*stack_c) <= 1)
 		return ;
-	temp = (*stack_c)->next->next;
-	(*stack_c)->next = NULL;
-	push_lstadd_front(stack_c, temp);
+	temp = *stack_c;
+	while(temp->next->next->next != NULL)
+		temp = temp->next;
+	stemp = temp->next;
+	temp->next = temp->next->next;
+	stemp->next = NULL;
+	push_lstadd_back(stack_c, temp);
 }
 
 void	insert_index(t_blist **stack_a)
