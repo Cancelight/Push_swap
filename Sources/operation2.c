@@ -6,7 +6,7 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 17:16:29 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/04/13 18:33:58 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/04/13 19:06:18 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	swap_op(t_blist **stack_c)
 	temp = (*stack_c)->next->next;
 	(*stack_c)->next = NULL;
 	push_lstadd_front(stack_c, temp);
-	free(temp);
 }
 
 void	insert_index(t_blist **stack_a)
@@ -47,8 +46,6 @@ void	insert_index(t_blist **stack_a)
 		}
 		min->index = i++;
 	}
-	free(temp);
-	free(min);
 }
 
 int	max_bit(int a)
@@ -58,7 +55,6 @@ int	max_bit(int a)
 	b = 0;
 	while (a)
 	{
-		ft_printf("b:%d\n", b);
 		a = a >> 1;
 		b++;
 	}
@@ -71,20 +67,22 @@ void	arrange_stack(t_blist **stack_a, t_blist **stack_b, int bit)
 	t_blist	*temp;
 
 	k = -1;
-	temp = *stack_a;
-	ft_printf("bit:%d\n", bit);
 	while (++k <= bit)
 	{
+		temp = *stack_a;
 		while (temp != NULL)
 		{
 			if (temp->index >> k & 1)
 			{
+				temp = temp->next;
 				rotate_op(stack_a);
-				ft_printf("welp");
 				write_op("ra");
 			}
 			else
+			{
+				temp = temp->next;
 				push_op(stack_a, stack_b, "pb");
+			}
 		}
 		while (*stack_b != NULL)
 			push_op(stack_b, stack_a, "pa");
@@ -98,12 +96,8 @@ int	control(t_blist *stack_a)
 	i = 0;
 	while (stack_a != NULL)
 	{
-		ft_printf("%d\n", stack_a->index);
 		if (stack_a->index != i)
-		{
-			ft_printf("k");
 			return (1);
-		}
 		i++;
 		stack_a = stack_a->next;
 	}
