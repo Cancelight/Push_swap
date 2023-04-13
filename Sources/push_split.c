@@ -6,13 +6,12 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 17:58:39 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/04/08 15:33:00 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/04/13 16:53:45 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push.h"
-
-static int	countc(char const *a, char b)
+int	countc(char const *a, char b)
 {
 	int	i;
 	int	count;
@@ -30,7 +29,7 @@ static int	countc(char const *a, char b)
 	return (count);
 }
 
-static char	**protect(void)
+char	**protect(void)
 {
 	char	**rtn;
 
@@ -39,7 +38,7 @@ static char	**protect(void)
 	return (rtn);
 }
 
-char	**push_split(char const *s, char c, int *count)
+char	**push_split(char *s, char c, int *count)
 {
 	int		i;
 	int		a;
@@ -67,7 +66,8 @@ char	**push_split(char const *s, char c, int *count)
 	return (ptr);
 }
 
-int	push_atoi(const char *s)
+
+int	push_atoi(char *s)
 {
 	int		i;
 	long	back;
@@ -76,7 +76,7 @@ int	push_atoi(const char *s)
 	back = 0;
 	np = 1;
 	i = 0;
-	while ((s[i] <= 13 && s[i] >= 9) || s[i] == 32 && push_alnum(s))
+	while (((s[i] <= 13 && s[i] >= 9) || s[i] == 32) && push_alnum(s))
 		i++;
 	if (s[i] == 43 || s[i] == 45)
 	{

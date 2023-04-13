@@ -6,7 +6,7 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 16:52:12 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/04/13 13:53:32 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/04/13 18:26:28 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,23 @@
 
 int	main(int ac, char **av)
 {
-	p_list *stack_a;
-	p_list *stack_b;
+	t_blist *stack_a;
+	t_blist *stack_b;
 
+	stack_b = NULL;
+	stack_a = NULL;
 	if (ac)
 		parse(ac, av, stack_a, stack_b);
 }
 
-void	parse(int ac, char **av, p_list *stack_a, p_list *stack_b)
+void	parse(int ac, char **av, t_blist *stack_a, t_blist *stack_b)
 {
 	int	bit;
 
-	size_apart(ac, av, stack_a);
-	insert_index(stack_a);
-	bit = max_bit(ft_lstsize(stack_a) - 1);
+	size_apart(ac, av, &stack_a);
+	insert_index(&stack_a);
+	bit = max_bit(push_lstsize(stack_a) - 1);
 	while (control(stack_a))
-		arrange_stack(stack_a, stack_b, bit);
+		arrange_stack(&stack_a, &stack_b, bit);
+	ft_printf("1\n");
 }
