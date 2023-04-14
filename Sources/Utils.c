@@ -6,13 +6,13 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 15:28:35 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/04/13 18:59:33 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/04/14 16:55:49 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push.h"
 
-t_blist	*push_lstnew(int content)
+t_blist	*push_lstnew(int content, int index)
 {
 	t_blist	*r ;
 
@@ -20,7 +20,7 @@ t_blist	*push_lstnew(int content)
 	if (r == NULL)
 		return (0);
 	r->content = content;
-	r->index = -1;
+	r->index = index;
 	r->next = NULL;
 	return (r);
 }

@@ -6,7 +6,7 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 15:35:38 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/04/13 18:22:15 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/04/14 16:56:23 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	size_apart(int ac, char **av, t_blist **stack_a);
 int		push_alnum(char *str);
 void	exit_game(char *str);
 int		push_atoi(char *s);
-t_blist	*push_lstnew(int content);
+t_blist	*push_lstnew(int content, int index);
 void	swap_op(t_blist **stack_c);
 void	rerotate_op(t_blist **stack_c);
 void	push_op(t_blist **stack_c, t_blist **stack_d, char *str);
