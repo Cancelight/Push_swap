@@ -6,7 +6,7 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 16:03:40 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/04/14 19:05:22 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/04/14 20:22:40 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,12 @@ void	rerotate_op(t_blist **stack_c)
 
 	if (push_lstsize(*stack_c) <= 2)
 		return ;
+	temp = push_lstlast(*stack_c);
+	ft_lstadd_front(stack_c, push_lstnew(temp->content, temp->index));
 	temp = *stack_c;
-	*stack_c = (*stack_c)->next;
+	while (temp->next->next != NULL)
+		temp = temp->next;
 	temp->next = NULL;
-	push_lstadd_back(stack_c, temp);
 }
 
 void	write_op(char *str)

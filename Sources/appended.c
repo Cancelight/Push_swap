@@ -6,7 +6,7 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 17:10:41 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/04/14 16:56:43 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/04/14 20:36:43 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,3 +33,5 @@ void	size_apart(int ac, char **av, t_blist **stack_a)
 		free(temp);
 	}
 }
+
+void two_base(t_blist **stack_a, t_blist **stack_b);

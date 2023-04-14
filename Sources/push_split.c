@@ -6,11 +6,12 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 17:58:39 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/04/13 16:53:45 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/04/14 20:25:42 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push.h"
+
 int	countc(char const *a, char b)
 {
 	int	i;
