@@ -6,7 +6,7 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 16:52:12 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/04/15 16:31:09 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/04/15 16:53:21 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,15 @@ void	parse(int ac, char **av, t_blist *stack_a, t_blist *stack_b)
 	if (!control(stack_a))
 		exit(0);
 	if (push_lstsize(stack_a) == 2)
+	{
 		two_base(&stack_a);
+		exit(0);
+	}
 	else if (push_lstsize(stack_a) == 3)
+	{
 		three_base(&stack_a);
+		exit (0);
+	}
 	else if (push_lstsize(stack_a) == 4 || push_lstsize(stack_a) == 5)
 		more_base(&stack_a, &stack_b);
 	bit = max_bit(push_lstsize(stack_a) - 1);

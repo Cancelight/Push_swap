@@ -6,7 +6,7 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 15:35:38 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/04/15 16:30:41 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/04/15 16:42:48 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ typedef struct s_blist
 	struct s_blist	*next;
 }			t_blist;
 
-char		**push_split(char *s, char c, int *count);
+char	**push_split(char *s, char c, int *count);
 void	size_apart(int ac, char **av, t_blist **stack_a);
 int		push_alnum(char *str);
 void	exit_game(char *str);

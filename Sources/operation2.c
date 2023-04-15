@@ -6,7 +6,7 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 17:16:29 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/04/15 15:32:43 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/04/15 17:10:23 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,13 +93,13 @@ int	control(t_blist *stack_a)
 {
 	int	i;
 
-	i = 0;
+	i = stack_a->index;
 	while (stack_a != NULL)
 	{
 		if (stack_a->index != i)
 			return (1);
-		i++;
 		stack_a = stack_a->next;
+		i++;
 	}
 	return (0);
 }
