@@ -6,7 +6,7 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 17:58:39 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/04/14 20:25:42 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/04/17 12:05:35 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,6 @@ char	**push_split(char *s, char c, int *count)
 	return (ptr);
 }
 
-
 int	push_atoi(char *s)
 {
 	int		i;
@@ -77,7 +76,7 @@ int	push_atoi(char *s)
 	back = 0;
 	np = 1;
 	i = 0;
-	while (((s[i] <= 13 && s[i] >= 9) || s[i] == 32) && push_alnum(s))
+	while (((s[i] <= 13 && s[i] >= 9) || s[i] == 32))
 		i++;
 	if (s[i] == 43 || s[i] == 45)
 	{
@@ -101,7 +100,8 @@ int	push_alnum(char *str)
 {
 	while (*str)
 	{
-		if (ft_isalnum(*str) != 1 && *str != 32)
+		if (!(*str <= 13 && *str >= 9) && *str != 32 && *str != 43 \
+		&& *str != 45 && !(*str >= 48 && *str <= 57))
 			exit_game("Invalid string");
 		str++;
 	}
