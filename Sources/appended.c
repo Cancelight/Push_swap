@@ -6,7 +6,7 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 17:10:41 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/04/17 15:44:49 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/04/17 16:03:04 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ void	two_base(t_blist **stack_c)
 
 void	three_base(t_blist **stack_c)
 {
-	ft_printf("aa\n");
 	if (!control(*stack_c))
 		return ;
 	if ((*stack_c)->index > push_lstlast(*stack_c)->index)
@@ -58,6 +57,7 @@ void	three_base(t_blist **stack_c)
 		swap_op(stack_c);
 		write_op("sa");
 	}
+	three_base(stack_c);
 }
 
 void	more_base(t_blist **stack_a, t_blist **stack_b)
@@ -78,7 +78,6 @@ void	more_base(t_blist **stack_a, t_blist **stack_b)
 		write_op("rra");
 	}
 	push_op(stack_a, stack_b, "pb");
-	ft_printf("aa\n");
 	if (push_lstsize(*stack_a) == 3)
 	{
 		three_base(stack_a);
