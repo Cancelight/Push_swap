@@ -6,7 +6,7 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 17:58:39 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/04/17 12:24:36 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/04/17 15:48:03 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,9 +88,9 @@ int	push_atoi(char *s)
 	{
 		back = back * 10 + (s[i] - 48) * np;
 		if (back > 2147483647)
-			exit_game("The number exceeds the integer limit.");
+			exit_game("Error:The number exceeds the integer limit.\n");
 		if (back < -2147483648)
-			exit_game("The number exceeds the integer limit.");
+			exit_game("Error:The number exceeds the integer limit.\n");
 		i++;
 	}
 	return ((int)back);
@@ -102,10 +102,8 @@ int	push_alnum(char *str)
 	{
 		if (!(*str <= 13 && *str >= 9) && *str != 32 && *str != 43 \
 		&& *str != 45 && !(*str >= 48 && *str <= 57))
-			exit_game("Invalid string");
+			exit_game("Error:Invalid string.\n");
 		str++;
 	}
 	return (1);
 }
-
-// iki eksi geldiğinde atoi 0 döndürüyor sıkıntılı muhtemlen hallet

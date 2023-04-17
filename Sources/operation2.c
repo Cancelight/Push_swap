@@ -6,7 +6,7 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 17:16:29 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/04/17 15:33:00 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/04/17 15:43:47 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	swap_op(t_blist **stack_c)
 	(*stack_c)->next->index));
 	(*stack_c)->next->next = (*stack_c)->next->next->next;
 	free (temp);
-//w
 }
 
 void	insert_index(t_blist **stack_a)
