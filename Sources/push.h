@@ -6,7 +6,7 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 15:35:38 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/04/15 16:42:48 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/04/17 12:18:39 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,6 @@ void	parse(int ac, char **av, t_blist *stack_a, t_blist *stack_b);
 void	two_base(t_blist **stack_a);
 void	three_base(t_blist **stack_a);
 void	more_base(t_blist **stack_a, t_blist **stack_b);
+int		apControl(char c);
 
 #endif

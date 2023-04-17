@@ -6,7 +6,7 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 16:03:40 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/04/15 14:36:47 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/04/17 12:19:25 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,11 @@ void	rerotate_op(t_blist **stack_c)
 void	write_op(char *str)
 {
 	ft_printf("%s\n", str);
+}
+
+int	apControl(char c)
+{
+	if (!ft_isalnum(c))
+		exit_game("Invalid number\n");
+	return (1);
 }
