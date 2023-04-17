@@ -6,7 +6,7 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 15:28:35 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/04/14 19:03:44 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/04/17 12:25:03 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,6 @@ t_blist	*push_lstnew(int content, int index)
 	r->index = index;
 	r->next = NULL;
 	return (r);
-}
-
-void	exit_game(char *str)
-{
-	ft_printf("%s", str);
-	exit(0);
 }
 
 int	push_lstsize(t_blist *lst)

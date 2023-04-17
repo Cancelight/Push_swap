@@ -6,7 +6,7 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 17:10:41 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/04/17 12:05:15 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/04/17 12:26:40 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,4 +86,10 @@ void	more_base(t_blist **stack_a, t_blist **stack_b)
 	}
 	else
 		more_base(stack_a, stack_b);
+}
+
+void	exit_game(char *str)
+{
+	ft_printf("%s", str);
+	exit(0);
 }

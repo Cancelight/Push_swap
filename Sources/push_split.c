@@ -6,7 +6,7 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 17:58:39 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/04/17 12:17:31 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/04/17 12:24:36 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ int	push_atoi(char *s)
 		i++;
 	if (s[i] == 43 || s[i] == 45)
 	{
-		if (s[i] == 45 && apControl(s[i + 1]))
+		if (s[i] == 45 && ap_control(s[i + 1]))
 			np *= -1;
 		i++;
 	}

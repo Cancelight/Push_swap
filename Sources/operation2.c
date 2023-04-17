@@ -6,7 +6,7 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 17:16:29 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/04/15 17:10:23 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/04/17 12:22:57 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,38 +103,3 @@ int	control(t_blist *stack_a)
 	}
 	return (0);
 }
-
-
-// 1.
-// bunu yaparken leak bırakabilirsin sorun değil önemli olan yapman.
-// bir main tanımla bir fonksiyon.
-// fonksiyon parametre olarak herhangi bir tipte bir pointer alıcak.
-// bu pointer'ın tuttuğu adresi **pointer kullanmadan değiştir.
-
-//2.
-//bunu da yaparken leak bırakabilirsin.
-//bir main ve bir fonksiyon tanımla.
-//fonksiyon parametre olarak double pointer alıcak ve tutulan ana root adresi değiştir.
-//mainden **tanımlamadan.
-
-
-//BUNLARIN HEPSİNİ YAPARKEN KAFANDAN DEĞİL SIRASIYLA ALGORİTMASINI YAZ.
-//ALGORİTMA ÖĞRENMEK İÇİN SORU ÇÖZME BUNUN YERİNE ÇOK BASİT DE OLSA ALGORİTMA YAZ.
-
-
-// Bir algoritma yazmaya başlarken ki adımlar.
-
-// birincisi konu ne ? ne yapıcaksın bunu öğren
-// ikincisi öğrendin main kurdun.
-// elemanları alırken. şimdi bu projelerin hata mesajlarını yap.
-// sonrasında kafanda kuruyorsan algoritmayı böl kendine göre parçala.
-// so_long; ->.ber uzantısı kontrol
-// map'i okursun
-// map uzunluğu doğurumu map hatalımı girişmiş kontrol.
-
-// map içeriğini kontrol ettin oyuncuun yerini buldun.
-// map valid map.
-
-// oyunu kurmaya başladın.
-// resimler. açılmaları mlx'e kaydetmek.
-// while döngüsü ile basmak.
