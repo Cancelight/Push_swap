@@ -6,7 +6,7 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 16:03:40 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/04/17 12:47:36 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/04/17 15:32:16 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,11 @@ void	push_op(t_blist **stack_c, t_blist **stack_d, char *str)
 	if (!*stack_c)
 		return ;
 	temp = *stack_c;
-	push_lstadd_front(stack_d, push_lstnew(temp->content, temp->index));
+	push_lstadd_front(stack_d, push_lstnew((*stack_c)->content, (*stack_c)->index));
 	*stack_c = (*stack_c)->next;
 	ft_printf("%s\n", str);
 	free (temp);
+//w
 }
 
 void	rotate_op(t_blist **stack_c)
@@ -32,24 +33,27 @@ void	rotate_op(t_blist **stack_c)
 	if (push_lstsize(*stack_c) < 2)
 		return ;
 	temp = (*stack_c);
-	push_lstadd_back(stack_c, push_lstnew(temp->content, temp->index));
+	push_lstadd_back(stack_c, push_lstnew((*stack_c)->content, (*stack_c)->index));
 	*stack_c = (*stack_c)->next;
 	free (temp);
+//w
 }
 
 void	rerotate_op(t_blist **stack_c)
 {
 	t_blist	*temp;
+	t_blist	*stemp;
 
-	if (push_lstsize(*stack_c) <= 2)
+	if (push_lstsize(*stack_c) < 2)
 		return ;
-	temp = push_lstlast(*stack_c);
-	push_lstadd_front(stack_c, push_lstnew(temp->content, temp->index));
+	stemp = push_lstlast(*stack_c);
+	push_lstadd_front(stack_c, push_lstnew(stemp->content, stemp->index));
 	temp = *stack_c;
 	while (temp->next->next != NULL)
 		temp = temp->next;
 	temp->next = NULL;
-	free (temp);
+	free (stemp);
+//w
 }
 
 void	write_op(char *str)

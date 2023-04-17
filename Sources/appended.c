@@ -6,7 +6,7 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 17:10:41 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/04/17 12:26:40 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/04/17 15:34:50 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	size_apart(int ac, char **av, t_blist **stack_a)
 
 void	two_base(t_blist **stack_c)
 {
-	if (control(*stack_c))
+	if (!control(*stack_c))
 		return ;
 	rotate_op(stack_c);
 	write_op("ra");
@@ -45,6 +45,7 @@ void	two_base(t_blist **stack_c)
 
 void	three_base(t_blist **stack_c)
 {
+	ft_printf("aa\n");
 	if (!control(*stack_c))
 		return ;
 	if ((*stack_c)->index > push_lstlast(*stack_c)->index)
@@ -77,6 +78,7 @@ void	more_base(t_blist **stack_a, t_blist **stack_b)
 		write_op("rra");
 	}
 	push_op(stack_a, stack_b, "pb");
+	ft_printf("aa\n");
 	if (push_lstsize(*stack_a) == 3)
 	{
 		three_base(stack_a);
@@ -90,6 +92,7 @@ void	more_base(t_blist **stack_a, t_blist **stack_b)
 
 void	exit_game(char *str)
 {
+	ft_putstr_fd((str), 2);
 	ft_printf("%s", str);
 	exit(0);
 }

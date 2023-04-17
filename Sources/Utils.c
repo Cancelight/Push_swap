@@ -6,7 +6,7 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 15:28:35 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/04/17 12:25:03 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/04/17 14:50:21 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	push_lstsize(t_blist *lst)
 	while (lst != NULL)
 	{
 			lst = lst->next;
-			count ++;
+			count++;
 	}
 	return (count);
 }

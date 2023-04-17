@@ -6,7 +6,7 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 17:16:29 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/04/17 14:04:10 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/04/17 15:33:00 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,11 @@ void	swap_op(t_blist **stack_c)
 	t_blist	*temp;
 
 	temp = (*stack_c)->next;
-	push_lstadd_front(stack_c, push_lstnew(temp->content, temp->index));
-	temp = (*stack_c)->next;
-	temp->next = temp->next->next;
+	push_lstadd_front(stack_c, push_lstnew((*stack_c)->next->content, \
+	(*stack_c)->next->index));
+	(*stack_c)->next->next = (*stack_c)->next->next->next;
 	free (temp);
+//w
 }
 
 void	insert_index(t_blist **stack_a)
