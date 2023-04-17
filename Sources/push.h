@@ -6,7 +6,7 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 15:35:38 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/04/17 12:24:13 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/04/17 14:04:35 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	rerotate_op(t_blist **stack_c);
 void	push_op(t_blist **stack_c, t_blist **stack_d, char *str);
 void	rotate_op(t_blist **stack_c);
 void	insert_index(t_blist **stack_a);
-void	arrange_stack(t_blist **stack_a, t_blist **stack_b, int bit);
+void	arrange_stack(t_blist **stack_a, t_blist **stack_b, int bit, int k);
 void	write_op(char *str);
 int		push_lstsize(t_blist *lst);
 int		control(t_blist *stack_a);
@@ -47,5 +47,6 @@ void	two_base(t_blist **stack_a);
 void	three_base(t_blist **stack_a);
 void	more_base(t_blist **stack_a, t_blist **stack_b);
 int		ap_control(char c);
+void	duplication(int a, int b, int i);
 
 #endif

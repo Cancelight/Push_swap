@@ -6,7 +6,7 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 17:16:29 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/04/17 12:22:57 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/04/17 14:04:10 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	swap_op(t_blist **stack_c)
 	push_lstadd_front(stack_c, push_lstnew(temp->content, temp->index));
 	temp = (*stack_c)->next;
 	temp->next = temp->next->next;
+	free (temp);
 }
 
 void	insert_index(t_blist **stack_a)
@@ -28,6 +29,7 @@ void	insert_index(t_blist **stack_a)
 	int		size;
 	t_blist	*min;
 	t_blist	*temp;
+	int		dup;
 
 	i = 0;
 	size = push_lstsize(*stack_a);
@@ -44,7 +46,10 @@ void	insert_index(t_blist **stack_a)
 			temp = temp->next;
 		}
 		min->index = i++;
+		duplication(dup, min->content, min->index);
+		dup = min->content;
 	}
+	free (temp);
 }
 
 int	max_bit(int a)
@@ -60,13 +65,11 @@ int	max_bit(int a)
 	return (b);
 }
 
-void	arrange_stack(t_blist **stack_a, t_blist **stack_b, int bit)
+void	arrange_stack(t_blist **stack_a, t_blist **stack_b, int bit, int k)
 {
-	int		k;
 	int		i;
 	t_blist	*temp;
 
-	k = -1;
 	while (++k <= bit)
 	{
 		i = -1;
@@ -87,6 +90,7 @@ void	arrange_stack(t_blist **stack_a, t_blist **stack_b, int bit)
 		while (push_lstsize(*stack_b))
 			push_op(stack_b, stack_a, "pa");
 	}
+	free (temp);
 }
 
 int	control(t_blist *stack_a)
