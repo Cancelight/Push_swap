@@ -6,7 +6,7 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 16:52:12 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/04/18 16:27:14 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/04/19 14:34:22 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,27 +41,12 @@ void	parse(int ac, char **av, t_blist *stack_a, t_blist *stack_b)
 	}
 	else if (push_lstsize(stack_a) == 3)
 	{
-		while (temp != NULL)
-		{
-			ft_printf("%d ,", temp->content);
-			temp = temp->next;
-		}
 		three_base(&stack_a);
-		while (temp != NULL)
-		{
-			ft_printf("%d ,", temp->content);
-			temp = temp->next;
-		}
 		exit (0);
 	}
 	else if (push_lstsize(stack_a) == 4 || push_lstsize(stack_a) == 5)
 	{
 		temp = stack_a;
-		while (temp != NULL)
-		{
-			ft_printf("%d ,", temp->content);
-			temp = temp->next;
-		}
 		more_base(&stack_a, &stack_b);
 	}
 	bit = max_bit(push_lstsize(stack_a) - 1);

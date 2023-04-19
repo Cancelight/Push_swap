@@ -6,7 +6,7 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 17:10:41 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/04/18 16:35:09 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/04/19 14:34:55 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,34 +45,40 @@ void	two_base(t_blist **stack_c)
 
 void	three_base(t_blist **stack_c)
 {
+	int	i;
 
 	if (!control(*stack_c))
 		return ;
-	if ((*stack_c)->next->index == 2)
+	i = (*stack_c)->next->index;
+	if (i > (*stack_c)->index && i > push_lstlast(*stack_c)->index)
+	{
+		rerotate_op(stack_c);
+		write_op("rra");
+		if (control(*stack_c))
+		{
+			swap_op(stack_c);
+			write_op("sa");
+		}
+		return ;
+	}
+	else if ((*stack_c)->index == i + 1)
 	{
 		swap_op(stack_c);
 		write_op("sa");
-		rotate_op(stack_c);
-		write_op("ra");
+		if (control(*stack_c))
+		{
+			rerotate_op(stack_c);
+			write_op("rra");
+		}
+		return ;
 	}
-	if ((*stack_c)->index > push_lstlast(*stack_c)->index)
-	{
-		rotate_op(stack_c);
-		write_op("ra");
-	}
-	if ((*stack_c)->index > (*stack_c)->next->index)
-	{
-		swap_op(stack_c);
-		write_op("sa");
-	}
-	if (control(*stack_c))
-		three_base(stack_c);
+	rotate_op(stack_c);
+	write_op("ra");
 }
 
 void	more_base(t_blist **stack_a, t_blist **stack_b)
 {
 	int	i;
-	t_blist *temp;
 
 	i = 0;
 	if (*stack_b != NULL)
@@ -93,12 +99,6 @@ void	more_base(t_blist **stack_a, t_blist **stack_b)
 		three_base(stack_a);
 		while (*stack_b != NULL)
 			push_op(stack_b, stack_a, "pa");
-		temp = *stack_a;
-		while (temp != NULL)
-		{
-			ft_printf("%d ,", temp->content);
-			temp = temp->next;
-		}
 		exit(0);
 	}
 	else
