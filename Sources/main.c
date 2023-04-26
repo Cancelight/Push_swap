@@ -6,7 +6,7 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 16:52:12 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/04/19 14:34:22 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/04/26 13:34:45 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,6 @@ int	main(int ac, char **av)
 void	parse(int ac, char **av, t_blist *stack_a, t_blist *stack_b)
 {
 	int	bit;
-	t_blist *temp;
-
-	temp = stack_a;
 
 	size_apart(ac, av, &stack_a);
 	insert_index(&stack_a);
@@ -41,14 +38,11 @@ void	parse(int ac, char **av, t_blist *stack_a, t_blist *stack_b)
 	}
 	else if (push_lstsize(stack_a) == 3)
 	{
-		three_base(&stack_a);
+		three_base(&stack_a, stack_a->next->index);
 		exit (0);
 	}
 	else if (push_lstsize(stack_a) == 4 || push_lstsize(stack_a) == 5)
-	{
-		temp = stack_a;
 		more_base(&stack_a, &stack_b);
-	}
 	bit = max_bit(push_lstsize(stack_a) - 1);
 	while (control(stack_a))
 		arrange_stack(&stack_a, &stack_b, bit, -1);

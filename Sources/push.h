@@ -6,7 +6,7 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 15:35:38 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/04/17 14:54:39 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/04/26 12:07:36 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	push_lstadd_back(t_blist **lst, t_blist *new);
 int		max_bit(int a);
 void	parse(int ac, char **av, t_blist *stack_a, t_blist *stack_b);
 void	two_base(t_blist **stack_a);
-void	three_base(t_blist **stack_a);
+void	three_base(t_blist **stack_a, int i);
 void	more_base(t_blist **stack_a, t_blist **stack_b);
 int		ap_control(char c);
 void	duplication(int a, int b, int i);
