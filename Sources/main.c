@@ -6,7 +6,7 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 16:52:12 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/04/26 13:34:45 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/05/03 19:10:49 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,18 +32,15 @@ void	parse(int ac, char **av, t_blist *stack_a, t_blist *stack_b)
 	if (!control(stack_a))
 		exit(0);
 	if (push_lstsize(stack_a) == 2)
-	{
 		two_base(&stack_a);
-		exit(0);
-	}
 	else if (push_lstsize(stack_a) == 3)
-	{
 		three_base(&stack_a, stack_a->next->index);
-		exit (0);
-	}
 	else if (push_lstsize(stack_a) == 4 || push_lstsize(stack_a) == 5)
 		more_base(&stack_a, &stack_b);
-	bit = max_bit(push_lstsize(stack_a) - 1);
-	while (control(stack_a))
+	else
+	{
+		bit = max_bit(push_lstsize(stack_a) - 1);
 		arrange_stack(&stack_a, &stack_b, bit, -1);
+	}
+	system("leaks push_swap");
 }

@@ -6,7 +6,7 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 17:10:41 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/04/26 13:34:35 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/05/03 19:06:48 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ void	more_base(t_blist **stack_a, t_blist **stack_b)
 		three_base(stack_a, (*stack_a)->next->index);
 		while (*stack_b != NULL)
 			push_op(stack_b, stack_a, "pa");
-		exit(0);
+		return ;
 	}
 	else
 		more_base(stack_a, stack_b);
