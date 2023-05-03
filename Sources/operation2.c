@@ -6,7 +6,7 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 17:16:29 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/04/26 13:30:42 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/05/03 19:21:35 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	arrange_stack(t_blist **stack_a, t_blist **stack_b, int bit, int k)
 	{
 		i = -1;
 		temp = *stack_a;
-		while (*stack_a != NULL && temp->index != i)
+		while (temp->index != i)
 		{
 			if (temp->index >> k & 1)
 			{
