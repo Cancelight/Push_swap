@@ -6,7 +6,7 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 17:58:39 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/04/17 15:48:03 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/05/05 12:21:55 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,12 +98,18 @@ int	push_atoi(char *s)
 
 int	push_alnum(char *str)
 {
-	while (*str)
+	int	i;
+
+	i = 0;
+	while (str[i])
 	{
-		if (!(*str <= 13 && *str >= 9) && *str != 32 && *str != 43 \
-		&& *str != 45 && !(*str >= 48 && *str <= 57))
+		if (!(str[i] <= 13 && str[i] >= 9) && str[i] != 32 && str[i] != 43 \
+		&& str[i] != 45 && !(str[i] >= 48 && str[i] <= 57))
 			exit_game("Error:Invalid string.\n");
-		str++;
+		if ((str[i] >= 48 && str[i] <= 57) && (!(str[i + 1] >= 48 && str[i + 1] <= 57) &&
+		!(str[i + 1] <= 13 && str[i + 1] >= 9) && str[i + 1] != 32 && str[i + 1] != 0))
+			exit_game("Error:Invalid number.\n");
+		i++;
 	}
 	return (1);
 }
