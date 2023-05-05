@@ -6,7 +6,7 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 17:58:39 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/05/05 12:21:55 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/05/05 12:26:36 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,8 +106,9 @@ int	push_alnum(char *str)
 		if (!(str[i] <= 13 && str[i] >= 9) && str[i] != 32 && str[i] != 43 \
 		&& str[i] != 45 && !(str[i] >= 48 && str[i] <= 57))
 			exit_game("Error:Invalid string.\n");
-		if ((str[i] >= 48 && str[i] <= 57) && (!(str[i + 1] >= 48 && str[i + 1] <= 57) &&
-		!(str[i + 1] <= 13 && str[i + 1] >= 9) && str[i + 1] != 32 && str[i + 1] != 0))
+		if ((str[i] >= 48 && str[i] <= 57) && (!(str[i + 1] >= 48 \
+		&& str[i + 1] <= 57) && !(str[i + 1] <= 13 && str[i + 1] >= 9) \
+		&& str[i + 1] != 32 && str[i + 1] != 0))
 			exit_game("Error:Invalid number.\n");
 		i++;
 	}
