@@ -30,7 +30,7 @@ void	parse(int ac, char **av, t_blist **stack_a, t_blist **stack_b)
 	size_apart(ac, av, stack_a);
 	insert_index(stack_a);
 	if (!control(*stack_a))
-		exit(0);
+		return ;
 	if (push_lstsize(*stack_a) == 2)
 		two_base(stack_a);
 	else if (push_lstsize(*stack_a) == 3)
