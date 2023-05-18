@@ -6,7 +6,7 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 17:10:41 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/05/05 13:42:46 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/05/18 13:25:26 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,5 +104,6 @@ void	more_base(t_blist **stack_a, t_blist **stack_b)
 void	exit_game(char *str)
 {
 	ft_putstr_fd((str), 2);
+	system("leaks push_swap");
 	exit(0);
 }

@@ -6,22 +6,11 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 17:16:29 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/05/03 19:26:17 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/05/18 13:40:53 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push.h"
-
-void	swap_op(t_blist **stack_c)
-{
-	t_blist	*temp;
-
-	temp = (*stack_c)->next;
-	push_lstadd_front(stack_c, push_lstnew((*stack_c)->next->content, \
-	(*stack_c)->next->index));
-	(*stack_c)->next->next = (*stack_c)->next->next->next;
-	free (temp);
-}
 
 void	insert_index(t_blist **stack_a)
 {
@@ -105,4 +94,11 @@ int	control(t_blist *stack_a)
 		i++;
 	}
 	return (0);
+}
+
+int	ap_control(char c)
+{
+	if (!ft_isalnum(c))
+		exit_game("Error:Invalid number.\n");
+	return (1);
 }
