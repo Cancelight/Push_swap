@@ -6,7 +6,7 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 17:10:41 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/05/20 17:59:52 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/05/20 18:03:21 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	size_apart(int ac, char **av, t_blist **stack_a)
 			push_lstadd_back(stack_a, push_lstnew(push_atoi(temp[k++]), -1));
 		k = 0;
 		if (*stack_a == NULL)
-			exit(0);
+			exit_game(NULL);
 		while (k < count)
 			free(temp[k++]);
 		free(temp);
