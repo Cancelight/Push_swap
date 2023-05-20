@@ -6,7 +6,7 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 17:16:29 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/05/20 17:19:49 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/05/20 17:56:41 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,6 @@ int	control(t_blist *stack_a)
 int	ap_control(char c)
 {
 	if (!ft_isalnum(c))
-		exit_game("Error:Invalid number.\n");
+		exit_game("Error\n");
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 17:58:39 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/05/20 17:20:42 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/05/20 17:57:15 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,9 +88,9 @@ int	push_atoi(char *s)
 	{
 		back = back * 10 + (s[i] - 48) * np;
 		if (back > 2147483647)
-			exit_game("Error:The number exceeds the integer limit.\n");
+			exit_game("Error\n");
 		if (back < -2147483648)
-			exit_game("Error:The number exceeds the integer limit.\n");
+			exit_game("Error\n");
 		i++;
 	}
 	return ((int)back);
@@ -105,11 +105,11 @@ int	push_alnum(char *str)
 	{
 		if (!(str[i] <= 13 && str[i] >= 9) && str[i] != 32 && str[i] != 43 \
 		&& str[i] != 45 && !(str[i] >= 48 && str[i] <= 57))
-			exit_game("Error:Invalid string.\n");
+			exit_game("Error\n");
 		if ((str[i] >= 48 && str[i] <= 57) && (!(str[i + 1] >= 48 \
 		&& str[i + 1] <= 57) && !(str[i + 1] <= 13 && str[i + 1] >= 9) \
 		&& str[i + 1] != 32 && str[i + 1] != 0))
-			exit_game("Error:Invalid number.\n");
+			exit_game("Error\n");
 		i++;
 	}
 	return (1);
