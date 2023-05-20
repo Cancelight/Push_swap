@@ -6,7 +6,7 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 17:10:41 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/05/18 13:25:26 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/05/20 17:23:26 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ void	size_apart(int ac, char **av, t_blist **stack_a)
 		while (k < count)
 			push_lstadd_back(stack_a, push_lstnew(push_atoi(temp[k++]), -1));
 		k = 0;
+		if (*stack_a == NULL)
+			exit_game("Error: Invalid string");
 		while (k < count)
 			free(temp[k++]);
 		free(temp);
@@ -104,6 +106,5 @@ void	more_base(t_blist **stack_a, t_blist **stack_b)
 void	exit_game(char *str)
 {
 	ft_putstr_fd((str), 2);
-	system("leaks push_swap");
 	exit(0);
 }
