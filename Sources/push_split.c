@@ -6,7 +6,7 @@
 /*   By: bkiziler <bkiziler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 17:58:39 by bkiziler          #+#    #+#             */
-/*   Updated: 2023/05/20 17:57:15 by bkiziler         ###   ########.fr       */
+/*   Updated: 2023/05/23 18:51:41 by bkiziler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,6 @@ int	countc(char const *a, char b)
 	return (count);
 }
 
-char	**protect(void)
-{
-	char	**rtn;
-
-	rtn = ft_calloc(1, sizeof(char *));
-	rtn[0] = NULL;
-	return (rtn);
-}
-
 char	**push_split(char *s, char c, int *count)
 {
 	int		i;
@@ -50,7 +41,7 @@ char	**push_split(char *s, char c, int *count)
 	i = 0;
 	n = 0;
 	if (!s || s[0] == 0)
-		return (protect());
+		return (NULL);
 	*count = countc(s, c);
 	ptr = ft_calloc(*count + 1, sizeof(char *));
 	if (ptr == NULL)
@@ -111,6 +102,13 @@ int	push_alnum(char *str)
 		&& str[i + 1] != 32 && str[i + 1] != 0))
 			exit_game("Error\n");
 		i++;
+	}
+	i = 0;
+	while(str[i] == 32)
+	{
+		i++;
+		if (!str[i])
+			exit_game("Error\n");
 	}
 	return (1);
 }
